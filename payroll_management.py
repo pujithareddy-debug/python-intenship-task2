@@ -26,27 +26,30 @@ def bonus():
         projects = int(input(f"Enter Projects Completed by {new_employee['Name']} : "))
         new_employee["Projects"] = projects
         salary = new_employee["Salary"]
-        if projects >= 6:
-            bonus_amount = salary * 6 / 100
-        elif projects >= 4:
-            bonus_amount = salary * 4 / 100
+        if projects >= 5:
+            bonus = salary * 10 / 100
+            print(f"Bonus = 10% of {salary} = {bonus}")
+        elif projects >= 3:
+            bonus = salary * 5 / 100
+            print(f"Bonus = 5% of {salary} = {bonus}")
         else:
-            bonus_amount = salary * 2 / 100
-        new_employee["Bonus"] = bonus_amount
+            bonus = salary * 2 / 100
+            print(f"Bonus = 2% of {salary} = {bonus}")
+        new_employee["Bonus"] = bonus
     print("Bonus Calculated")
 # Function to Generate Payslip
 def payslip():
     print("\n---------------- PAYSLIP ----------------")
     print("---------------------------------------------------------------------------------------------------------------------------------------")
-    print(f"{'ID':<8}"f"{'Name':<12}"f"{'Projects':<10}"f"{'Basic':<10}"f"{'HRA':<10}"f"{'Food':<10}"f"{'Travel':<10}"f"{'Monthly':<12}"f"{'Bonus':<10}"f"{'Total':<10}")
+    print(f"{'ID':<10}"f"{'Name':<12}"f"{'Projects':<10}"f"{'Basic':<10}"f"{'HRA':<10}"f"{'Food':<10}"f"{'Travel':<10}"f"{'Monthly':<12}"f"{'Bonus':<10}"f"{'Total':<10}")
     print("---------------------------------------------------------------------------------------------------------------------------------------")
     for new_employee in employees:
         monthly = new_employee["Monthly Salary"]
         bonus_amt = new_employee["Bonus"]
         total_pay = monthly + bonus_amt
-        print(f"{new_employee['ID']:<8}"f"{new_employee['Name']:<12}"f"{new_employee['Projects']:<10}"f"{new_employee['Salary']:<10}"f"{new_employee['HRA']:<10}"f"{new_employee['Food']:<10}"f"{new_employee['Travel']:<10}"f"{monthly:<12}"f"{bonus_amt:<10}"f"{total_pay:<10}")
+        print(f"{new_employee['ID']:<10}"f"{new_employee['Name']:<12}"f"{new_employee['Projects']:<10}"f"{new_employee['Salary']:<10}"f"{new_employee['HRA']:<10}"f"{new_employee['Food']:<10}"f"{new_employee['Travel']:<10}"f"{monthly:<12}"f"{bonus_amt:<10}"f"{total_pay:<10}")
     print("---------------------------------------------------------------------------------------------------------------------------------------")
-# Menu Driven Program
+# Menu  Program
 while True:
     print("\n------ PAYSLIP MANAGEMENT SYSTEM ------\n")
     print("1. Add Employee")
