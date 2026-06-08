@@ -26,10 +26,13 @@ def bonus():
         projects = int(input(f"Enter Projects Completed by {new_employee['Name']} : "))
         new_employee["Projects"] = projects
         salary = new_employee["Salary"]
-        if projects >= 5:
+        if projects == 5:
             bonus = salary * 10 / 100
             print(f"Bonus = 10% of {salary} = {bonus}")
-        elif projects >= 3:
+        elif projects ==4:
+            bonus = salary * 7 / 100
+            print(f"Bonus = 7% of {salary} = {bonus}")
+        elif projects == 3:
             bonus = salary * 5 / 100
             print(f"Bonus = 5% of {salary} = {bonus}")
         else:
